@@ -1,5 +1,4 @@
 use std::io;
-use std::process::Command;
 
 fn main() {
     let mut field: [[char; 4]; 4] = [
@@ -11,9 +10,8 @@ fn main() {
     game_loop(&mut field);
 }
 
-
 fn render(field: [[char; 4]; 4]) {
-    Command::new("clear");
+    print!("{}[2J", 27 as char); //clear terminal or sth idk, found it here: https://stackoverflow.com/questions/34837011/
     println!(
         "
 ╔════╗╔══╗╔═══╗     ╔════╗╔═══╗╔═══╗     ╔════╗╔═══╗╔═══╗
