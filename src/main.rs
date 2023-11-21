@@ -11,6 +11,7 @@ fn main() {
     game_loop(&mut field);
 }
 
+
 fn render(field: [[char; 4]; 4]) {
     Command::new("clear");
     println!(
