@@ -93,10 +93,7 @@ fn game_loop(mut field: &mut [[char; 4]; 4]) {
                 break;
             }
         }
-        let mut player: char = 'A';
-        if round%2 != 0 {
-            player = 'B';
-        }
+        let player: char = if round%2 == 0 {'A'} else {'B'};
         loop {
             let coordinates = user_input(player, field);
             if check_field(field, coordinates) {
